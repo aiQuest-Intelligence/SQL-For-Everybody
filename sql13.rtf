@@ -1,0 +1,353 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- ### TRANSFORMATION ----\
+\
+-----PIVOTING\
+create table \
+practice.sales \
+(\
+id serial,\
+year int,\
+amount int,\
+quarter int\
+);\
+\
+insert into practice.sales\
+(year,quarter,amount)\
+values \
+(2023,1,300),\
+(2023,2,600),\
+(2023,3,400),\
+(2022,3,500);\
+\
+SELECT\
+sl.*\
+from \
+practice.sales sl;\
+\
+YEAR | Qaureter1 | Quarter2 | Quarter3\
+--------------------------------------\
+2023 | 300       |  600     | 400 \
+2022 |           |          | 500\
+\
+\
+\
+-- tablefunc\
+CREATE EXTENSION IF NOT EXISTS tablefunc;\
+\
+SELECT * FROM \
+CROSSTAB(\
+'SELECT year, quarter, amount from practice.sales order by 1,2',\
+'SELECT DISTINCT quarter from practice.sales order by 1'\
+) AS ct\
+(\
+year int, Qaureter1 int, Quarter2 int, Quarter3 int\
+) order by year desc;\
+\
+\
+\
+SELECT\
+	year,\
+-- 	quarter as Qaureter1,\
+	CASE WHEN quarter=1 THEN amount END AS Qaureter1,\
+-- 	quarter as Quarter2,\
+	CASE WHEN quarter=2 THEN amount END Quarter2,\
+-- 	quarter as Quarter3,\
+	CASE WHEN quarter=3 THEN amount END Quarter3,\
+	amount\
+FROM\
+	practice.sales;\
+\
+\
+\
+SELECT\
+	year,\
+-- 	quarter as Qaureter1,\
+	CASE WHEN quarter=1 THEN amount END AS Qaureter1,\
+-- 	quarter as Quarter2,\
+	CASE WHEN quarter=2 THEN amount END Quarter2,\
+-- 	quarter as Quarter3,\
+	CASE WHEN quarter=3 THEN amount END Quarter3\
+FROM\
+	practice.sales;\
+\
+\
+\
+SELECT\
+	year,\
+	SUM(CASE WHEN quarter=1 THEN amount END) AS Qaureter1,\
+	SUM(CASE WHEN quarter=2 THEN amount END) Quarter2,\
+	SUM(CASE WHEN quarter=3 THEN amount END) Quarter3\
+FROM\
+	practice.sales;\
+\
+\
+\
+SELECT\
+	year,\
+	SUM(CASE WHEN quarter=1 THEN amount END) AS Qaureter1,\
+	SUM(CASE WHEN quarter=2 THEN amount END) Quarter2,\
+	SUM(CASE WHEN quarter=3 THEN amount END) Quarter3\
+-- 	INTO practice.sales_pivoted\
+FROM\
+	practice.sales\
+GROUP BY year\
+order by year desc;\
+\
+\
+----UNPIVOTING \
+SELECT * from practice.sales_pivoted;\
+\
+YEAR | AMOUNT | QUARTER \
+-----------------------\
+2023 | ----   | 1\
+2023 | ----   | 2\
+2023 | ----   | 3\
+2022 | ----   | 3\
+;\
+\
+\
+\
+SELECT\
+*\
+FROM\
+	practice.sales_pivoted;\
+\
+SELECT\
+*\
+FROM\
+	practice.sales;\
+\
+\
+SELECT\
+sp."year",\
+NULL as amount,\
+sp.qaureter1,\
+sp.quarter2,\
+sp.quarter3\
+from practice.sales_pivoted sp;\
+\
+\
+\
+SELECT\
+sp."year",\
+1 AS quarter,\
+sp.qaureter1 as amount,\
+2 AS quarter,\
+sp.quarter2 as amount,\
+3 AS quarter,\
+sp.quarter3 as amount\
+from practice.sales_pivoted sp;\
+\
+\
+\
+SELECT\
+sp."year",\
+1 AS quarter,\
+sp.qaureter1 as amount\
+from practice.sales_pivoted sp;\
+\
+SELECT\
+sp."year",\
+2 AS quarter,\
+sp.quarter2 as amount\
+from practice.sales_pivoted sp;\
+\
+SELECT\
+sp."year",\
+3 AS quarter,\
+sp.quarter3 as amount\
+from practice.sales_pivoted sp;\
+\
+\
+\
+SELECT\
+sp."year",\
+1 AS quarter,\
+sp.qaureter1 as amount\
+from practice.sales_pivoted sp\
+UNION ALL\
+SELECT\
+sp."year",\
+2 AS quarter,\
+sp.quarter2 as amount\
+from practice.sales_pivoted sp\
+UNION ALL\
+SELECT\
+sp."year",\
+3 AS quarter,\
+sp.quarter3 as amount\
+from practice.sales_pivoted sp;\
+\
+\
+\
+SELECT\
+sp."year",\
+sp.qaureter1 as amount,\
+1 AS quarter\
+from practice.sales_pivoted sp\
+WHERE sp.qaureter1 is not null\
+UNION ALL\
+SELECT\
+sp."year",\
+sp.quarter2 as amount,\
+2 AS quarter\
+from practice.sales_pivoted sp\
+WHERE sp.quarter2 is not null\
+UNION ALL\
+SELECT\
+sp."year",\
+sp.quarter3 as amount,\
+3 AS quarter\
+from practice.sales_pivoted sp\
+WHERE sp.quarter3 is not null\
+;\
+\
+\
+\
+\
+\
+\
+\
+---###CUSTOM DATA TYPE\
+-- COMPOSITE TYPE\
+---###\
+CREATE TABLE \
+practice.dept \
+(\
+id serial,\
+dept_info JSON --(dept name, manager id, dept desc)\
+);\
+\
+-- VARCHAR,TEXT,INT,FLOAT4,JSON,,,,,,\
+CREATE TYPE deptinfotype AS \
+(\
+dept_name varchar,\
+mgr_id int,\
+dept_desc text\
+);\
+\
+CREATE TABLE \
+practice.dept \
+(\
+id serial,\
+dept_info deptinfotype, --(dept name, manager id, dept desc)\
+location int\
+);\
+\
+INSERT INTO practice.dept(dept_info,location)\
+values \
+(('English',765,'This dept was created for bla bla bla'),76547),\
+(('BANGLA',76576,'This dept was created for this hois this'),79599),\
+(('MATH',43324,'This dept was created for this hois this'),543)\
+;\
+\
+\
+SELECT * from \
+practice.dept;\
+\
+\
+-- ENUMERATED (ENUM)\
+CREATE TYPE emotion_type AS ENUM('happy','sad','nutral');\
+\
+CREATE TABLE practice.emotions\
+(\
+id serial,\
+emotion emotion_type, --happy,sad,nutral\
+human_name varchar);\
+\
+\
+INSERT INTO practice.emotions(emotion ,human_name)\
+VALUES \
+('happy','Mr X'),\
+('sad','Mr Y'),\
+('chill','Ms Z');\
+\
+-- Query 1 ERROR at Line 254: : ERROR:  invalid input value for enum emotion_type: "chill"\
+-- LINE 5: ('chill','Ms Z');\
+--          ^\
+         \
+\
+INSERT INTO practice.emotions(emotion ,human_name)\
+VALUES \
+('happy','Mr X'),\
+('sad','Mr Y'),\
+('nutral','Ms Z'),\
+('happy','Ms A');\
+\
+\
+CREATE table practice.call_history\
+(\
+chid serial,\
+start_time timestamp,\
+end_time TIMESTAMP,\
+_user int,\
+created_at TIMESTAMP\
+);\
+\
+-- ###RANGE TYPE\
+\
+CREATE TYPE callduration AS RANGE(subtype=time);\
+\
+CREATE table practice.call_history\
+(\
+chid serial,\
+duration callduration,\
+_user int,\
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+INSERT INTO practice.call_history(duration,_user)\
+values \
+('[10:20, 10:28)',5376),\
+('[09:34, 09:36)',765);\
+\
+\
+SELECT *\
+FROM \
+practice.call_history\
+WHERE \
+duration @> '10:25'::time;\
+\
+-- WHERE s_time >=8987 and e_time <=85763\
+\
+SELECT *\
+FROM \
+practice.call_history\
+WHERE \
+duration && '[09:35,09:36)'::callduration;\
+\
+\
+--Q&A Type\
+create type practice.qatype AS (q varchar, a varchar);\
+-- drop table practice.auto_generated_qa;\
+create table practice.auto_generated_qa\
+(\
+qaid serial,\
+-- question practice.qatype primary key,\
+-- answer practice.qatype,\
+qa practice.qatype,\
+is_deleted bool DEFAULT FALSE, --FALSE/TRUE\
+qa_added_by int,\
+created_at timestamp DEFAULT now(),\
+updated_at timestamp DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+\
+INSERT INTO practice.auto_generated_qa(qa,qa_added_by)\
+VALUES \
+(('What''s you cat name?', 'Sequel'),67456),\
+(('How old is your dog', '10 YO'),6546);\
+\
+\
+SELECT \
+(qa).a\
+from practice.auto_generated_qa\
+WHERE (qa).q='How old is your dog';\
+\
+}
