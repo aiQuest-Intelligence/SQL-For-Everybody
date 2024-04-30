@@ -1,0 +1,71 @@
+
+DDL = Data Definition lang [CREATE,ALTER,DROP] --> ARCHITECTURE 
+DML = Data manipulation lang [INSERT,UPDATE,DELETE] --> DATA LAYER 
+DCL /TCL = Data/ Transactrion control lang[grant, revoke] --> PERMISSION MANAGEMENT
+DTL = Data transformation lang  [COMMIT, ROLLBACL] --> Flow complete / Revert 
+DQL = Data Query lang  [SELECT] --> ANALYRICS, REPORTING 
+
+---WRITING SEQUENCE
+SELECT (COLUMNS WE WANT TO SEE) 
+FROM (TABLE NAMES, JOIn)
+WHERE (ROWS WE WANT TO SEE/ FILTER)
+GROUP BY (GROUPPING SOME columns)
+HAVING (FILTER ON GROUP)
+ORDER BY (SORTING)
+LIMIT (HOW MANY ROWS WE WANT TO SEE) 
+
+--Creating orders table
+CREATE TABLE sales.orders
+(order_id serial , cust_name varchar, amount float);
+--INSERTING SOME DATA INTO ORDERS TABLE
+INSERT INTO sales.orders
+(order_id, cust_name, amount)
+VALUES 
+(6545,'ABC', 654.54),
+(6945,'ABC', 554.57),
+(6645,'ABC', 64.74);
+
+
+-------------
+|||||||||||||
+-------------
+
+INSERT INTO sales.orders
+(cust_name, order_id, amount)
+VALUES 
+('ABC', 6545,654.54),
+('JHGF',6945, 554.57),
+('UhF', 6645,64.74);
+
+INSERT INTO sales.orders
+VALUES 
+(154,'ABC', 54.54),
+(547,'NEWTBL', 54.57),
+(6545,'ABC', 71.74);
+
+
+---WRITING SEQUENCE
+-- SELECT (COLUMNS WE WANT TO SEE) 
+select * 
+-- FROM (TABLE NAMES, JOIn)
+FROM sales.orders
+-- WHERE (ROWS WE WANT TO SEE/ FILTER)
+WHERE amount>70
+-- GROUP BY (GROUPPING SOME columns)
+-- HAVING (FILTER ON GROUP)
+-- ORDER BY (SORTING)
+-- LIMIT (HOW MANY ROWS WE WANT TO SEE) 
+LIMIT 2;
+
+
+-- INTERNALS
+=> PARSING 
+ CHECKS SYNYAX OF QUERY 
+ CHECK STRUCTURE
+=> OPTIMIZATION 
+  TRIES to find most optimal way to execute 
+  FINDS Various ways /tricks / strategies , pick one best 
+  CHEck INDEXING, PARTITIONING
+=> GENERATE DATA FROM SOURCE 
+	
+

@@ -1,0 +1,78 @@
+
+create user shuvo with password 'abCd' 
+valid until '2023-09-30';
+
+grant usage on schema sales to shuvo;
+grant select on table sales.students to shuvo;
+grant select on table sales.orders to shuvo;
+revoke select on table sales.orders from shuvo;
+
+ALTER user shuvo 
+valid until '2023-10-01';
+
+ALTER user shuvo 
+valid until 'infinity';
+
+-- VAPT 
+
+ALTER TABLE sales.students
+owner to shuvo;
+
+
+create table sales.new_tbl (id int, name text);
+DROP TABLE sales.new_tbl ;
+
+
+create TEMPORARY table new_tbl (id int, name text);
+
+INSERT INTO new_tbl 
+(id , name )
+VALUES 
+(64,'ujyfuyf'),
+(68,'jhfuy564');
+
+select * from new_tbl;
+----.
+create table new_tbl (id int, name text, creation_date date)
+partition by range(creation_date);
+
+INSERT INTO new_tbl 
+(id , name, creation_date )
+VALUES 
+(64,'ujyfuyf','2023-09-30'),
+(68,'jhfuy564','2023-09-28');
+
+create table new_tbl_2023_09_30 PARTITION of new_tbl DEFAULT;
+
+SELECT * from information_schema.tables ;
+
+CREATE INDEX order_id_idx ON sales.orders (order_id);
+DROP INDEX order_id_idx ;
+
+create table sales.new_tbl (id int PRIMARY KEY, name text);
+
+create table sales.employees(id serial primary key , emp_name varchar, created_at date);
+
+create table sales.departments(id serial primary key , dept_name varchar,
+emp_id int, created_at date);
+
+ALTER TABLE sales.departments
+ADD CONSTRAINT fk_dept_emp
+FOREIGN KEY(emp_id)
+REFERENCES sales.departments(id);
+
+INSERT INTO sales.employees
+(id, emp_name, created_at )
+values 
+(646,'ABCd',CURRENT_DATE);
+
+select * from 
+sales.employees;
+
+select emp_name,now() as created_at INTO sales.employees_copy2 from sales.employees;
+
+create table sales.created_from_emp 
+AS 
+select * from sales.aiquest_test_csv
+limit 1;
+

@@ -1,0 +1,1118 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red115\green158\blue202;\red170\green170\blue170;\red158\green158\blue158;
+\red192\green192\blue192;\red238\green204\blue100;\red202\green197\blue128;\red193\green170\blue108;\red126\green186\blue211;
+\red102\green151\blue104;}
+{\*\expandedcolortbl;;\csgenericrgb\c45098\c61961\c79216;\csgenericrgb\c66667\c66667\c66667;\csgenericrgb\c61961\c61961\c61961;
+\csgenericrgb\c75294\c75294\c75294;\csgenericrgb\c93333\c80000\c39216;\csgenericrgb\c79216\c77255\c50196;\csgenericrgb\c75686\c66667\c42353;\csgenericrgb\c49412\c72941\c82745;
+\csgenericrgb\c40000\c59216\c40784;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs44 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  * 
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf4 practice\cf3 .\cf4 employees\cf3  
+\f1\b \cf2 limit
+\f0\b0 \cf3  \cf5 10\cf6 ;\cf3 \uc0\u8232 \cf0 \
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf4 emp\cf3 .\cf4 last_name\cf3 ,\cf0 \
+\cf4 emp\cf3 .\cf4 first_name\cf3  || \cf7 ' '\cf3  || \cf4 emp\cf3 .\cf4 last_name\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 full_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 concat
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf7 ' '\cf3 ,\cf4 emp\cf3 .\cf4 last_name\cf3 ) \cf4 \ul \ulc4 fname\cf0 \ulnone \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 LEFT
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf5 2\cf3 ),\cf0 \
+
+\f1\b \cf8 RIGHT
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf5 2\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 LENGTH
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 LEFT
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf5 2\cf3 ),\cf0 \
+
+\f1\b \cf8 LENGTH
+\f0\b0 \cf3 (
+\f1\b \cf8 LEFT
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf5 2\cf3 ))\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\cf4 emp\cf3 .\cf4 salary\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 ,
+\f1\b \cf8 LPAD
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 salary\cf3 ::
+\f1\b \cf8 varchar
+\f0\b0 \cf3 ,\cf5 7\cf3 ,\cf7 '0'\cf3 )\cf0 \
+\cf3 ,
+\f1\b \cf8 RPAD
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 salary\cf3 ::
+\f1\b \cf8 varchar
+\f0\b0 \cf3 ,\cf5 6\cf3 ,\cf7 'x'\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 POSITION
+\f0\b0 \cf3 (\cf7 'lex'\cf3  
+\f1\b \cf2 IN
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 first_name\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 LTRIM
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ),\cf0 \
+
+\f1\b \cf8 RTRIM
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ),\cf0 \
+
+\f1\b \cf8 TRIM
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 last_name\cf3 =\cf7 'Chen'\cf6 ;\cf0 \
+\
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 lower
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 ),\cf0 \
+
+\f1\b \cf8 upper
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 first_name\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 last_name\cf3 =
+\f1\b \cf9 $user_input
+\f0\b0 \cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 lower
+\f0\b0 \cf3 (\cf4 last_name\cf3 )=
+\f1\b \cf9 $user_input
+\f0\b0 \cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 lower
+\f0\b0 \cf3 (\cf4 last_name\cf3 )=
+\f1\b \cf8 lower
+\f0\b0 \cf3 (
+\f1\b \cf9 $user_input
+\f0\b0 \cf3 )\cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 last_name\cf3 )=
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (
+\f1\b \cf9 $user_input
+\f0\b0 \cf3 )\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 +\cf5 880153543535\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf5 880875764674\cf0 \
+\cf5 017856546535\cf0 \
+\cf5 15465353366\cf3  \cf10 --IDEAL\cf0 \
+\cf5 154\cf3 -\cf5 65353366\cf0 \
+\cf5 1546\cf3  \cf5 5353366\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf9 $input_phone
+\f0\b0 \cf3 ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 TRIM
+\f0\b0 \cf3 (\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 	
+\f1\b \cf2 leading
+\f0\b0 \cf3  \cf7 '880'\cf3  
+\f1\b \cf2 from
+\f0\b0 \cf3  
+\f1\b \cf8 cast
+\f0\b0 \cf3 (
+\f1\b \cf9 $input_phone
+\f0\b0 \cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  
+\f1\b \cf8 TEXT
+\f0\b0 \cf3 )\cf0 \
+\cf3 )\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 now
+\f0\b0 \cf3 (),\cf0 \
+
+\f1\b \cf8 current_timestamp
+\f0\b0 \cf3  ,\cf0 \
+
+\f1\b \cf8 current_date
+\f0\b0 \cf3 ,\cf0 \
+
+\f1\b \cf8 now
+\f0\b0 \cf3 ()::
+\f1\b \cf8 date
+\f0\b0 \cf3 ,\cf0 \
+
+\f1\b \cf8 now
+\f0\b0 \cf3 () - 
+\f1\b \cf8 interval
+\f0\b0 \cf3  \cf7 '18 years'\cf3 ,\cf0 \
+
+\f1\b \cf8 now
+\f0\b0 \cf3 ()::
+\f1\b \cf8 date
+\f0\b0 \cf3  - 
+\f1\b \cf8 interval
+\f0\b0 \cf3  \cf7 '18 years'\cf3 ,\cf0 \
+
+\f1\b \cf8 now
+\f0\b0 \cf3 () + 
+\f1\b \cf8 interval
+\f0\b0 \cf3  \cf7 '1 month'\cf3 ,\cf0 \
+
+\f1\b \cf8 now
+\f0\b0 \cf3 () + 
+\f1\b \cf8 interval
+\f0\b0 \cf3  \cf7 '2 week'\cf6 ;\cf0 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 first_name\cf3 ) 
+\f1\b \cf2 LIKE
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf7 '%ex%'\cf3 )\cf6 ;\cf0 \
+\
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 first_name\cf3 ) 
+\f1\b \cf2 LIKE
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf7 'lE%'\cf3 )\cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 first_name\cf3 ) 
+\f1\b \cf2 LIKE
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf7 '%a'\cf3 )\cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 first_name\cf3 ) 
+\f1\b \cf2 LIKE
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf7 '_ex%'\cf3 )\cf6 ;\cf0 \
+\
+
+\f1\b \cf2 SELECT
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 *\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf4 first_name\cf3 ) 
+\f1\b \cf2 LIKE
+\f0\b0 \cf3  
+\f1\b \cf8 UPPER
+\f0\b0 \cf3 (\cf7 '__ex__'\cf3 )\cf6 ;\cf0 \
+\
+\
+
+\f1\b \cf2 select
+\f0\b0 \cf3  
+\f1\b \cf8 current_date
+\f0\b0 \cf3 ,\cf0 \
+
+\f1\b \cf2 extract
+\f0\b0 \cf3 (
+\f1\b \cf2 day
+\f0\b0 \cf3  
+\f1\b \cf2 from
+\f0\b0 \cf3  
+\f1\b \cf8 current_date
+\f0\b0 \cf3 ),\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 DATE_PART
+\f0\b0 \cf3 (\cf7 'DAY'\cf3 , 
+\f1\b \cf8 current_date
+\f0\b0 \cf3 )\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 --NULL \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 EM\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  , \cf4 em\cf3 .\cf4 bonus\cf3  , \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 COMMISSION\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  + \cf4 em\cf3 .\cf4 bonus\cf3  + \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3   
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf8 "TOTAL AMOUNT"\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 EM\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  , \cf4 em\cf3 .\cf4 bonus\cf3  , \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 COMMISSION\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  + 
+\f1\b \cf8 coalesce
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 bonus\cf3 ,\cf5 0\cf3 ) + 
+\f1\b \cf8 coalesce
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 commission_pct\cf3 ,\cf5 0\cf3 )*\cf4 em\cf3 .\cf4 salary\cf3   
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf8 "TOTAL AMOUNT"\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 EM\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  , \cf4 em\cf3 .\cf4 bonus\cf3  , \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 COMMISSION\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  + 
+\f1\b \cf8 coalesce
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 commission_pct\cf3 ,\cf4 em\cf3 .\cf4 bonus\cf3 ,\cf5 0\cf3 )*\cf4 em\cf3 .\cf4 salary\cf3   
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf8 "TOTAL AMOUNT"\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 case
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 	
+\f1\b \cf2 when
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  
+\f1\b \cf2 is
+\f0\b0 \cf3  
+\f1\b \cf2 null
+\f0\b0 \cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 then
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 bonus\cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 else
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 end
+\f0\b0 \cf0 \
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 EM\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  , \cf4 em\cf3 .\cf4 bonus\cf3  , \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 COMMISSION\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  + 
+\f1\b \cf8 coalesce
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 commission_pct\cf3 ,\cf4 em\cf3 .\cf4 bonus\cf3 ,\cf5 0\cf3 )*\cf4 em\cf3 .\cf4 salary\cf3   
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf8 "TOTAL AMOUNT"\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 ,
+\f1\b \cf2 case
+\f0\b0 \cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 when
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  
+\f1\b \cf2 is
+\f0\b0 \cf3  
+\f1\b \cf2 null
+\f0\b0 \cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 then
+\f0\b0 \cf3  \cf0 \
+\cf3 		
+\f1\b \cf2 case
+\f0\b0 \cf3  \cf0 \
+\cf3 					
+\f1\b \cf2 when
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 bonus\cf3  
+\f1\b \cf2 is
+\f0\b0 \cf3  
+\f1\b \cf2 not
+\f0\b0 \cf3  
+\f1\b \cf2 null
+\f0\b0 \cf3  
+\f1\b \cf2 then
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 bonus\cf3  \cf0 \
+\cf3 					
+\f1\b \cf2 else
+\f0\b0 \cf3  \cf5 0\cf0 \
+\cf3 		
+\f1\b \cf2 end
+\f0\b0 \cf0 \
+\cf3 	
+\f1\b \cf2 else
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 end
+\f0\b0 \cf0 \
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 EM\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  , \cf4 em\cf3 .\cf4 bonus\cf3  , \cf4 em\cf3 .\cf4 commission_pct\cf3 *\cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf4 COMMISSION\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  + 
+\f1\b \cf8 coalesce
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 commission_pct\cf3 ,\cf4 em\cf3 .\cf4 bonus\cf3 ,\cf5 0\cf3 )*\cf4 em\cf3 .\cf4 salary\cf3   
+\f1\b \cf2 as
+\f0\b0 \cf3  \cf8 "TOTAL AMOUNT"\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 ,
+\f1\b \cf2 case
+\f0\b0 \cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 when
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  
+\f1\b \cf2 is
+\f0\b0 \cf3  
+\f1\b \cf2 null
+\f0\b0 \cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 then
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 bonus\cf3  \cf0 \
+\cf3 	
+\f1\b \cf2 else
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 commission_pct\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 end
+\f0\b0 \cf0 \
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  
+\f1\b \cf2 like
+\f0\b0 \cf3  \cf7 '%@gmail.com'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  
+\f1\b \cf2 like
+\f0\b0 \cf3  \cf7 '%@%'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  ~*\cf7 '.com'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  ~*\cf7 '^A'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  ~*\cf7 '.com$'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 first_name\cf3  , \cf4 emp\cf3 .\cf4 email\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 email\cf3  !~*\cf7 '.com$'\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 department_id\cf3  \cf6 ;\cf0 \
+\
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf5 1\cf6 ;\cf0 \
+\
+\
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf5 1\cf6 ;\cf0 \
+\
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 first_name\cf3  \cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 ---subquery\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 salary\cf3  = \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 (\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 )\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 ---correlated / synchronized \ul subquery\cf0 \ulnone \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3 ,\cf0 \
+\cf4 em\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf5 1\cf3 ,\cf5 2\cf6 ;\cf0 \
+\
+\
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3   ,\cf0 \
+\cf4 em\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 salary\cf3  
+\f1\b \cf2 in
+\f0\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 (
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 em\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 )\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 em\cf3 .\cf4 first_name\cf3   ,\cf0 \
+\cf4 em\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\cf4 em\cf3 .\cf4 salary\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 em\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 em\cf3 .\cf4 salary\cf3  =\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 (
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 salary\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 where
+\f0\b0 \cf3  \cf4 emp\cf3 .\cf4 department_id\cf3  = \cf4 em\cf3 .\cf4 department_id\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 )\cf6 ;\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 ----CTE (common table expression)\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 with
+\f0\b0 \cf3  \cf4 dep_wise_sal\cf3  
+\f1\b \cf2 as
+\f0\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 (\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emp\cf3 .\cf4 department_id\cf3  ,\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf8 max
+\f0\b0 \cf3 (\cf4 emp\cf3 .\cf4 salary\cf3 ) \cf4 max_sal\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 emp\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 group
+\f0\b0 \cf3  
+\f1\b \cf2 by
+\f0\b0 \cf3  \cf5 1\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 )\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf10 --,another_cte AS (), another_ct2 AS ()\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 select
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 emps\cf3 .\cf4 first_name\cf3  ,\cf0 \
+\cf4 emps\cf3 .\cf4 salary\cf3  ,\cf0 \
+\cf4 emps\cf3 .\cf4 department_id\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 from
+\f0\b0 \cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 practice\cf3 .\cf4 employees\cf3  \cf4 \ul \ulc4 emps\cf0 \ulnone \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 JOIN
+\f0\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 dep_wise_sal\cf3  \cf4 dws\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 ON
+\f0\b0 \cf3  \cf4 emps\cf3 .\cf4 department_id\cf3  =\cf4 dws\cf3 .\cf4 department_id\cf0 \
+
+\f1\b \cf2 and
+\f0\b0 \cf3  \cf4 dws\cf3 .\cf4 max_sal\cf3  = \cf4 emps\cf3 .\cf4 salary\cf3  \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf6 ;\cf0 \
+}
